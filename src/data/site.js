@@ -75,7 +75,7 @@ export const gallery = [
   },
   {
     title: 'Handcrafted Brewing',
-    image: 'https://images.unsplash.com/photo-1578505962838-a6e7cdc2804d?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1000&q=80',
   },
   {
     title: 'Estate Harvest',

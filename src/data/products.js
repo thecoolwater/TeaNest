@@ -73,7 +73,7 @@ export const products = [
     price: 999,
     rating: 4.8,
     stock: 'In Stock',
-    image: 'https://images.unsplash.com/photo-1578505962838-a6e7cdc2804d?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=900&q=80',
     description: 'A robust CTC base designed to hold spices beautifully while keeping the Assam soul intact.',
   },
   {
