@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShoppingBag, Star, X } from 'lucide-react';
 import Button from './Button.jsx';
+import { business } from '../data/brand.js';
 import { formatPrice } from '../utils/format.js';
 
 export default function ProductModal({ product, onClose }) {
@@ -24,7 +25,13 @@ export default function ProductModal({ product, onClose }) {
             exit={{ y: 20, opacity: 0 }}
             onClick={(event) => event.stopPropagation()}
           >
-            <img className="h-full min-h-[320px] w-full object-cover" src={product.image} alt={product.name} />
+            <img
+              className={`h-full min-h-[320px] w-full bg-forest/45 ${
+                product.imageFit === 'contain' ? 'object-contain p-4' : 'object-cover'
+              }`}
+              src={product.detailImage || product.image}
+              alt={product.name}
+            />
             <div className="relative p-7 md:p-9">
               <button
                 className="focus-ring absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-gold/30 text-white transition hover:bg-gold hover:text-night"
@@ -46,6 +53,13 @@ export default function ProductModal({ product, onClose }) {
                 </span>
               </div>
               <p className="mt-8 font-heading text-4xl font-bold text-gold">{formatPrice(product.price)}</p>
+              {product.id === 'royal-gold' ? (
+                <div className="mt-6 rounded-[8px] border border-gold/15 bg-forest/55 p-4 text-sm leading-7 text-white/64">
+                  <p>Ingredients: {business.ingredients}</p>
+                  <p>Packed by: {business.legalName}</p>
+                  <p>FSSAI Lic. No. {business.fssai}</p>
+                </div>
+              ) : null}
               <Button className="mt-8 w-full sm:w-auto">
                 <ShoppingBag className="h-4 w-4" />
                 Add to Cart

@@ -10,6 +10,7 @@ import {
   Sparkles,
   Truck,
 } from 'lucide-react';
+import { brandAssets, business } from './brand.js';
 
 export const navLinks = [
   { label: 'Home', href: '/' },
@@ -20,19 +21,19 @@ export const navLinks = [
 ];
 
 export const whyChoose = [
-  { title: '100% Natural', text: 'Pure Assam leaves without artificial color or synthetic fragrance.', icon: Leaf },
-  { title: 'Rich Aroma', text: 'Carefully fired leaves preserve the signature malty Assam perfume.', icon: Sparkles },
-  { title: 'Premium Assam Tea', text: 'Selected garden lots, graded for liquor, leaf quality, and cup character.', icon: Award },
-  { title: 'Direct From Tea Gardens', text: 'Fresh batches move from gardens to packaging with tight quality checks.', icon: Truck },
+  { title: '100% Natural', text: 'Assam tea crafted without artificial color or synthetic fragrance.', icon: Leaf },
+  { title: 'Rich Aroma', text: 'Selected leaves deliver the refreshing aroma promised on every TeaNest pack.', icon: Sparkles },
+  { title: 'Great Taste', text: 'Balanced Assam strength made for everyday homes, retailers, and hospitality counters.', icon: Coffee },
+  { title: 'Packed With Care', text: 'T.N. Enterprise packs every batch with freshness, storage, and shelf-life discipline.', icon: Truck },
 ];
 
 export const processSteps = [
-  { title: 'Tea Garden', text: 'Leaves begin in selected Assam gardens known for deep, fertile soil.', icon: Leaf },
-  { title: 'Harvesting', text: 'Tender shoots are handpicked at their aromatic peak.', icon: HeartHandshake },
-  { title: 'Processing', text: 'Controlled withering, rolling, oxidation, and firing shape the cup.', icon: Factory },
-  { title: 'Quality Check', text: 'Every batch is tasted for aroma, strength, color, and clarity.', icon: ShieldCheck },
-  { title: 'Packaging', text: 'Freshness is sealed in elegant, protective packs.', icon: PackageCheck },
-  { title: 'Delivery', text: 'Orders are prepared quickly so the leaves reach you at their best.', icon: CheckCircle2 },
+  { title: 'Assam Leaves', text: 'Carefully selected Assam tea leaves form the base of every TeaNest blend.', icon: Leaf },
+  { title: 'Blending', text: 'Signature tea blending balances strength, aroma, and a refreshing finish.', icon: HeartHandshake },
+  { title: 'Processing', text: 'The cup profile is shaped for reliable color, body, and everyday satisfaction.', icon: Factory },
+  { title: 'Quality Check', text: 'Batches are reviewed for aroma, taste, freshness, and customer consistency.', icon: ShieldCheck },
+  { title: 'Packing', text: 'Royal Gold packs are sealed with storage guidance and best-before discipline.', icon: PackageCheck },
+  { title: 'Trade Supply', text: 'Wholesale, retailer, trader, and packer supply is managed from Bardoli, Gujarat.', icon: CheckCircle2 },
 ];
 
 export const testimonials = [
@@ -58,27 +59,27 @@ export const testimonials = [
 
 export const gallery = [
   {
-    title: 'Assam Tea Plantation',
-    image: 'https://images.unsplash.com/photo-1563911892437-1feda0179e1b?auto=format&fit=crop&w=1000&q=80',
+    title: 'Royal Gold Front Pack',
+    image: brandAssets.royalGoldFront,
   },
   {
-    title: 'Golden Cup of Tea',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80',
+    title: 'Royal Gold Back Details',
+    image: brandAssets.royalGoldBack,
   },
   {
-    title: 'Whole Tea Leaves',
-    image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=1000&q=80',
+    title: 'TeaNest Brand Card',
+    image: brandAssets.cardLogo,
   },
   {
-    title: 'Premium Tea Packaging',
-    image: 'https://images.unsplash.com/photo-1622480916113-9000ac49b79d?auto=format&fit=crop&w=1000&q=80',
+    title: 'T.N. Enterprise Details',
+    image: brandAssets.cardInfo,
   },
   {
-    title: 'Handcrafted Brewing',
+    title: 'Assam Tea Brew',
     image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=1000&q=80',
   },
   {
-    title: 'Estate Harvest',
+    title: 'Tea Estate Mood',
     image: 'https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=1000&q=80',
   },
 ];
@@ -86,7 +87,7 @@ export const gallery = [
 export const faqs = [
   {
     question: 'Where does TeaNest source its tea?',
-    answer: 'TeaNest sources Assam tea from carefully selected gardens and partner estates that meet our standards for leaf quality, aroma, and consistency.',
+    answer: 'TeaNest is crafted from carefully selected Assam leaves and packed by T.N. Enterprise in Bardoli, Gujarat.',
   },
   {
     question: 'Which tea is best for strong milk tea?',
@@ -98,11 +99,11 @@ export const faqs = [
   },
   {
     question: 'Do you sell wholesale packs?',
-    answer: 'Yes. Hotels, cafes, offices, and retailers can contact TeaNest for wholesale pricing and custom packaging discussions.',
+    answer: 'Yes. TeaNest works as a wholesale, retailer, trader, and packer supply brand. Contact T.N. Enterprise for trade orders.',
   },
   {
     question: 'How fast are orders shipped?',
-    answer: 'Most orders are processed within 24 to 48 business hours and shipped through trusted courier partners.',
+    answer: 'Most orders and trade enquiries are handled by customer care from Bardoli. Dispatch timelines depend on stock, destination, and order size.',
   },
 ];
 
@@ -110,7 +111,7 @@ export const policies = {
   privacy: {
     title: 'Privacy Policy',
     body: [
-      'TeaNest collects only the information required to process orders, answer enquiries, and improve the customer experience.',
+      'TeaNest collects only the information required by T.N. Enterprise to process orders, answer enquiries, and improve the customer experience.',
       'Customer data is handled with care and is never sold. Payment details are processed through secure payment providers.',
       'You may contact TeaNest to update, correct, or request deletion of your personal information.',
     ],
@@ -126,7 +127,7 @@ export const policies = {
   shipping: {
     title: 'Shipping Policy',
     body: [
-      'Orders are packed with care and usually dispatched within 24 to 48 business hours.',
+      'Orders are packed with care by T.N. Enterprise and dispatched based on destination, stock availability, and order size.',
       'Delivery timelines depend on the destination and courier service availability.',
       'Customers receive order tracking details once a shipment is dispatched.',
     ],
@@ -142,8 +143,10 @@ export const policies = {
 };
 
 export const contactCards = [
-  { label: 'Phone', value: '+91 98765 43210' },
-  { label: 'Email', value: 'care@teanest.in' },
-  { label: 'Address', value: 'TeaNest House, Pan Bazaar, Guwahati, Assam 781001' },
-  { label: 'Business Hours', value: 'Monday to Saturday, 9:30 AM - 6:30 PM' },
+  { label: 'Customer Care', value: business.phone },
+  { label: 'Alternate Phone', value: business.phoneAlt },
+  { label: 'Email', value: business.email },
+  { label: 'Address', value: business.addressLines.join(', ') },
+  { label: 'FSSAI Licence', value: business.fssai },
+  { label: 'Business Type', value: business.businessType },
 ];

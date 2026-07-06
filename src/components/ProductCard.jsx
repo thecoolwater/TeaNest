@@ -14,7 +14,9 @@ export default function ProductCard({ product, onQuickView, wishlist, onWishlist
     >
       <div className="relative aspect-[4/3] overflow-hidden border-b border-gold/15">
         <img
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+          className={`h-full w-full transition duration-700 group-hover:scale-110 ${
+            product.imageFit === 'contain' ? 'bg-night/70 object-contain p-3' : 'object-cover'
+          }`}
           src={product.image}
           alt={product.name}
           loading="lazy"

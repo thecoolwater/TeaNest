@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Menu, ShoppingBag, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { navLinks } from '../data/site.js';
+import BrandMark from './BrandMark.jsx';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,20 +18,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled || open ? 'border-b border-gold/15 bg-night/92 shadow-luxury backdrop-blur-xl' : 'bg-transparent'
+      className={`printed-header fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled || open ? 'border-b border-gold/25 bg-night/95 shadow-luxury backdrop-blur-xl' : 'bg-night/18'
       }`}
     >
       <nav className="container-premium flex h-20 items-center justify-between" aria-label="Main navigation">
-        <Link to="/" className="focus-ring flex items-center gap-3 rounded-full" onClick={() => setOpen(false)}>
-          <span className="grid h-11 w-11 place-items-center rounded-full border border-gold/45 bg-forest text-gold">
-            TN
-          </span>
-          <span>
-            <span className="block font-heading text-2xl font-bold leading-none text-white">TeaNest</span>
-            <span className="text-[10px] uppercase tracking-[0.28em] text-gold">Assam Estate Tea</span>
-          </span>
-        </Link>
+        <BrandMark compact onClick={() => setOpen(false)} />
 
         <div className="hidden items-center gap-8 lg:flex">
           {navLinks.map((item) => (
@@ -51,7 +44,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             to="/products"
-            className="focus-ring btn-ripple inline-flex items-center gap-2 rounded-full border border-gold/45 px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-gold hover:text-night"
+            className="focus-ring btn-ripple inline-flex items-center gap-2 rounded-full border border-gold/45 bg-night/35 px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-gold hover:text-night"
           >
             <ShoppingBag className="h-4 w-4" />
             Shop

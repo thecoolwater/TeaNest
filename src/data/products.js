@@ -1,3 +1,5 @@
+import { brandAssets } from './brand.js';
+
 export const products = [
   {
     id: 'royal-gold',
@@ -7,8 +9,10 @@ export const products = [
     price: 749,
     rating: 4.9,
     stock: 'In Stock',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80',
-    description: 'A bright, malty Assam blend with a polished golden liquor and a long, elegant finish.',
+    image: brandAssets.royalGoldFront,
+    detailImage: brandAssets.royalGoldBack,
+    imageFit: 'contain',
+    description: 'TeaNest Royal Gold Assam Tea with rich taste, refreshing aroma, and premium dark green-gold packaging.',
   },
   {
     id: 'ctc-tea',
@@ -19,7 +23,7 @@ export const products = [
     rating: 4.8,
     stock: 'In Stock',
     image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=900&q=80',
-    description: 'Strong breakfast tea crafted for a deep cup, rich color, and a satisfying milk tea body.',
+    description: 'Strong Assam CTC crafted for a deep cup, rich color, and a satisfying milk tea body.',
   },
   {
     id: 'premium-dust',
@@ -74,7 +78,7 @@ export const products = [
     rating: 4.8,
     stock: 'In Stock',
     image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=900&q=80',
-    description: 'A robust CTC base designed to hold spices beautifully while keeping the Assam soul intact.',
+    description: 'A robust Assam CTC base designed to hold spices beautifully while keeping the TeaNest soul intact.',
   },
   {
     id: 'golden-tips',

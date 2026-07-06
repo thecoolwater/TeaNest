@@ -2,6 +2,7 @@ import { MessageCircle, Send } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection.jsx';
 import Button from '../components/Button.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import { brandAssets, business } from '../data/brand.js';
 import { contactCards } from '../data/site.js';
 
 export default function Contact() {
@@ -9,7 +10,7 @@ export default function Contact() {
     <>
       <section className="bg-forest-radial pb-16 pt-36">
         <div className="container-premium">
-          <SectionHeader eyebrow="Contact" title="Let us help you choose your next cup." text="For orders, wholesale, hospitality supply, gifting, or product questions, TeaNest is ready to assist." />
+          <SectionHeader eyebrow="Contact" title="Connect with T.N. Enterprise." text="For Royal Gold orders, wholesale, retail, trader, packer, and product enquiries, TeaNest customer care is ready to assist." />
         </div>
       </section>
 
@@ -27,22 +28,26 @@ export default function Contact() {
         </AnimatedSection>
 
         <div className="grid gap-5">
+          <AnimatedSection className="overflow-hidden rounded-[8px] border border-gold/15 bg-forest/55 shadow-luxury">
+            <img className="h-56 w-full object-cover" src={brandAssets.cardInfo} alt="T.N. Enterprise contact card" loading="lazy" />
+          </AnimatedSection>
           {contactCards.map((card) => (
             <AnimatedSection key={card.label} className="rounded-[8px] border border-gold/15 bg-forest/55 p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">{card.label}</p>
               <p className="mt-3 text-white/74">{card.value}</p>
             </AnimatedSection>
           ))}
-          <Button href="https://wa.me/919876543210" className="w-full"><MessageCircle className="h-4 w-4" />WhatsApp TeaNest</Button>
+          <Button href={`https://wa.me/${business.whatsapp}`} className="w-full"><MessageCircle className="h-4 w-4" />WhatsApp TeaNest</Button>
         </div>
       </section>
 
       <section className="container-premium pb-24">
-        <AnimatedSection className="grid min-h-[360px] place-items-center rounded-[8px] border border-gold/15 bg-forest-radial bg-forest text-center shadow-luxury">
+        <AnimatedSection className="grid min-h-[360px] place-items-center rounded-[8px] border border-gold/15 bg-forest-radial bg-forest p-8 text-center shadow-luxury">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-gold">Map</p>
-            <h2 className="mt-3 font-heading text-4xl font-bold">Guwahati, Assam</h2>
-            <p className="mt-4 max-w-xl text-white/62">Google Map placeholder for TeaNest House, Pan Bazaar, Guwahati. Replace with an embedded map when the official listing is ready.</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-gold">Business Address</p>
+            <h2 className="mt-3 font-heading text-4xl font-bold">Bardoli, Gujarat</h2>
+            <p className="mt-4 max-w-xl text-white/62">{business.addressLines.join(', ')}</p>
+            <p className="mt-4 text-sm text-gold">FSSAI Lic. No. {business.fssai}</p>
           </div>
         </AnimatedSection>
       </section>

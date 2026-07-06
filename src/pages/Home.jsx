@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection.jsx';
 import Button from '../components/Button.jsx';
+import BrandIntro from '../components/BrandIntro.jsx';
 import FAQAccordion from '../components/FAQAccordion.jsx';
 import Hero from '../components/Hero.jsx';
 import Newsletter from '../components/Newsletter.jsx';
 import ProductCard from '../components/ProductCard.jsx';
 import ProductModal from '../components/ProductModal.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import { brandAssets, business } from '../data/brand.js';
 import { faqs, gallery, processSteps, testimonials, whyChoose } from '../data/site.js';
 import { products } from '../data/products.js';
 
@@ -24,17 +26,19 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <BrandIntro />
 
       <AnimatedSection className="container-premium grid gap-10 py-24 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-gold">Our Story</p>
-          <h2 className="font-heading text-4xl font-bold leading-tight md:text-5xl">TeaNest brings the quiet grandeur of Assam to your table.</h2>
+          <h2 className="font-heading text-4xl font-bold leading-tight md:text-5xl">TeaNest brings Royal Gold Assam tea from T.N. Enterprise to your table.</h2>
           <p className="mt-6 leading-8 text-white/68">
-            TeaNest was created for tea drinkers who want purity, presence, and polish in every cup. Our leaves are
-            selected for natural character, rich aroma, balanced strength, and a fresh garden-to-pack experience.
+            TeaNest is crafted from carefully selected Assam leaves, delivering rich taste and refreshing aroma in
+            every cup. Packed and marketed by {business.legalName}, the brand serves retail, wholesale, trader, and
+            packer requirements from Bardoli, Gujarat.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4">
-            {['Premium Assam Tea', 'Natural Tea', 'Rich Aroma', 'Handpicked Leaves'].map((item) => (
+            {['100% Natural', 'Rich Aroma', 'Great Taste', `FSSAI ${business.fssai}`].map((item) => (
               <div key={item} className="rounded-[8px] border border-gold/15 bg-forest/55 p-4 text-sm font-semibold text-cream">
                 {item}
               </div>
@@ -42,8 +46,8 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <img className="h-72 w-full rounded-[8px] object-cover shadow-luxury" src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=900&q=80" alt="Tea estate harvest" loading="lazy" />
-          <img className="mt-12 h-72 w-full rounded-[8px] object-cover shadow-luxury" src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=900&q=80" alt="Premium tea leaves" loading="lazy" />
+          <img className="h-72 w-full rounded-[8px] object-cover object-top shadow-luxury" src={brandAssets.royalGoldFront} alt="TeaNest Royal Gold front pack" loading="lazy" />
+          <img className="mt-12 h-72 w-full rounded-[8px] object-cover object-top shadow-luxury" src={brandAssets.cardInfo} alt="T.N. Enterprise business card details" loading="lazy" />
         </div>
       </AnimatedSection>
 

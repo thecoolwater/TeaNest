@@ -1,5 +1,6 @@
 import { ArrowUp, Leaf, Phone } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { business } from '../data/brand.js';
 
 export default function FloatingButtons() {
   const [visible, setVisible] = useState(false);
@@ -15,14 +16,14 @@ export default function FloatingButtons() {
     <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
       <a
         className="focus-ring grid h-12 w-12 place-items-center rounded-full bg-[#25d366] text-white shadow-luxury transition hover:-translate-y-1"
-        href="https://wa.me/919876543210"
+        href={`https://wa.me/${business.whatsapp}`}
         aria-label="Chat on WhatsApp"
       >
         <Leaf className="h-5 w-5" />
       </a>
       <a
         className="focus-ring grid h-12 w-12 place-items-center rounded-full border border-gold/35 bg-forest text-gold shadow-luxury transition hover:-translate-y-1"
-        href="tel:+919876543210"
+        href="tel:+919664650240"
         aria-label="Call TeaNest"
       >
         <Phone className="h-5 w-5" />

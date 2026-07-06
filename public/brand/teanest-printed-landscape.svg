@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-label="TeaNest dark green mountain landscape">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dfe8dd"/>
+      <stop offset="0.45" stop-color="#7da59b"/>
+      <stop offset="1" stop-color="#06130f"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#174b3c"/>
+      <stop offset="1" stop-color="#082118"/>
+    </linearGradient>
+    <radialGradient id="gold" cx="58%" cy="40%" r="42%">
+      <stop offset="0" stop-color="#d4af37" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="720" fill="url(#sky)"/>
+  <rect width="1600" height="720" fill="#0b2e26" opacity="0.28"/>
+  <circle cx="940" cy="285" r="340" fill="url(#gold)"/>
+  <path d="M0 362 C160 210 260 270 390 156 C520 42 660 190 760 118 C900 18 1015 186 1120 112 C1290 -8 1430 226 1600 88 L1600 720 L0 720 Z" fill="#b8cac2" opacity="0.42"/>
+  <path d="M0 430 C190 280 315 330 455 230 C610 120 748 288 892 218 C1044 143 1194 274 1320 206 C1446 135 1535 210 1600 186 L1600 720 L0 720 Z" fill="#5f8d80" opacity="0.62"/>
+  <path d="M0 506 C210 420 335 485 520 386 C706 286 880 482 1065 358 C1255 230 1440 346 1600 274 L1600 720 L0 720 Z" fill="url(#hill)"/>
+  <path d="M0 570 C185 520 330 620 512 535 C684 454 824 594 1015 510 C1192 432 1372 490 1600 405 L1600 720 L0 720 Z" fill="#06130f" opacity="0.9"/>
+  <g fill="#06130f">
+    <path d="M90 548 l28-80 28 80 h-18 l22 58 h-64 l22-58z"/>
+    <path d="M170 566 l22-64 22 64 h-14 l18 48 h-52 l18-48z"/>
+    <path d="M1290 520 l32-92 32 92 h-20 l24 70 h-72 l24-70z"/>
+    <path d="M1405 555 l24-76 24 76 h-16 l20 54 h-56 l20-54z"/>
+    <path d="M1490 535 l34-96 34 96 h-22 l28 72 h-80 l28-72z"/>
+  </g>
+  <g fill="none" stroke="#f7e7a1" stroke-opacity="0.16" stroke-width="1">
+    <path d="M90 654 C310 585 500 622 705 574 C930 522 1195 556 1510 456"/>
+    <path d="M130 680 C455 610 765 644 1085 560 C1265 512 1420 478 1560 438"/>
+  </g>
+</svg>

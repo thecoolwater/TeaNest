@@ -1,40 +1,41 @@
 import AnimatedSection from '../components/AnimatedSection.jsx';
 import Newsletter from '../components/Newsletter.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import { brandAssets, business } from '../data/brand.js';
 import { whyChoose } from '../data/site.js';
 
 const milestones = [
-  ['2018', 'TeaNest began with estate visits across Assam and a search for naturally aromatic lots.'],
-  ['2020', 'The first premium CTC and orthodox ranges were refined for homes, hotels, and gifting.'],
-  ['2023', 'Quality checks expanded with batch tasting, freshness grading, and packaging controls.'],
-  ['2026', 'TeaNest continues building a modern Indian premium tea experience rooted in Assam.'],
+  ['Brand', 'TeaNest was shaped as a dark green and gold premium Assam tea identity.'],
+  ['Blend', 'Royal Gold focuses on rich taste, refreshing aroma, and 100% natural Assam tea.'],
+  ['Pack', `Packed and marketed by ${business.legalName}, Bardoli, Gujarat with FSSAI ${business.fssai}.`],
+  ['Supply', 'Built for retail, wholesale, trader, and packer enquiries with direct customer care support.'],
 ];
 
 export default function About() {
   return (
     <>
       <section className="relative overflow-hidden pb-24 pt-36">
-        <img className="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=1800&q=85" alt="TeaNest Assam tea garden" />
-        <div className="absolute inset-0 bg-night/78" />
+        <img className="absolute inset-0 h-full w-full object-cover" src={brandAssets.printedLandscape} alt="TeaNest green brand mood" />
+        <div className="absolute inset-0 bg-night/70" />
         <div className="container-premium relative z-10 max-w-4xl">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-gold">About TeaNest</p>
-          <h1 className="font-heading text-5xl font-bold md:text-7xl">A premium Assam tea house built on restraint, freshness, and trust.</h1>
+          <h1 className="font-heading text-5xl font-bold md:text-7xl">A premium Assam tea brand by T.N. Enterprise.</h1>
         </div>
       </section>
 
       <section className="container-premium grid gap-10 py-24 lg:grid-cols-2 lg:items-center">
         <AnimatedSection>
-          <SectionHeader align="left" eyebrow="Company Story" title="From selected gardens to a polished everyday ritual." />
+          <SectionHeader align="left" eyebrow="Company Story" title="From selected Assam leaves to a polished Royal Gold pack." />
           <p className="mt-6 leading-8 text-white/68">
-            TeaNest works with carefully selected tea sources to create blends that feel rich without becoming harsh.
-            We focus on clean sourcing, thoughtful processing, and packaging that protects freshness until the first brew.
+            TeaNest is crafted from carefully selected Assam leaves for rich taste and refreshing aroma. The brand is
+            packed and marketed by {business.legalName}, {business.businessType.toLowerCase()}, from Bardoli, Gujarat.
           </p>
         </AnimatedSection>
         <AnimatedSection className="grid gap-4">
           {[
-            ['Mission', 'To make premium Assam tea feel accessible, elegant, and consistently excellent.'],
-            ['Vision', 'To become a trusted modern tea brand for homes, hotels, gifting, and connoisseurs.'],
-            ['Quality', 'Every batch is reviewed for color, aroma, liquor, leaf grade, and freshness.'],
+            ['Mission', 'To make Royal Gold Assam tea feel premium, natural, and easy to trust.'],
+            ['Vision', 'To grow TeaNest as a recognizable Indian tea brand for homes, retailers, and trade buyers.'],
+            ['Quality', `${business.ingredients}, careful packing, ${business.bestBefore.toLowerCase()}, and clear storage guidance.`],
           ].map(([title, text]) => (
             <div key={title} className="rounded-[8px] border border-gold/15 bg-forest/55 p-6">
               <h3 className="font-heading text-2xl text-gold">{title}</h3>
