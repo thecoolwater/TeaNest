@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const seo = {
-  '/': ['TeaNest | Premium Assam Tea', 'Experience the royal taste of Assam with premium tea leaves sourced directly from selected gardens.'],
-  '/products': ['TeaNest Products | Premium Assam Tea', 'Shop Royal Gold, CTC tea, premium dust tea, and orthodox Assam blends from TeaNest.'],
-  '/about': ['About TeaNest | Assam Tea Story', 'Discover TeaNest, a premium Assam tea brand built on natural leaves, rich aroma, and careful sourcing.'],
-  '/contact': ['Contact TeaNest | Premium Tea Support', 'Contact TeaNest for orders, wholesale enquiries, support, and premium Assam tea information.'],
-  '/faq': ['TeaNest FAQ | Premium Tea Questions', 'Answers about TeaNest sourcing, storage, shipping, wholesale orders, and tea selection.'],
+  '/': ['TeaNest Royal Gold | Premium Assam Tea', 'Discover TeaNest Royal Gold: selected Assam tea leaves with deep amber colour, smooth malty character, rich aroma, and a bold refreshing cup.'],
+  '/products': ['Buy Premium Assam Tea | TeaNest Products', 'Explore TeaNest Royal Gold, Assam CTC tea, premium dust tea, and orthodox tea blends for homes, retailers, and wholesale orders.'],
+  '/about': ['About TeaNest | Our Premium Assam Tea Story', 'Meet TeaNest by T.N. Enterprise and discover our Assam tea story, natural leaves, rich aroma, careful blending, and trusted packing in Gujarat.'],
+  '/contact': ['Contact TeaNest | Assam Tea Orders & Wholesale', 'Contact TeaNest for premium Assam tea orders, wholesale enquiries, retailer supply, customer support, and Royal Gold product information.'],
+  '/faq': ['Assam Tea FAQ | TeaNest Brewing & Storage Guide', 'Find answers about Assam tea sourcing, brewing, storage, shipping, wholesale orders, and choosing the right TeaNest blend.'],
 };
 
 export default function useSeo() {
@@ -19,7 +19,12 @@ export default function useSeo() {
     if (meta) meta.setAttribute('content', description);
     const ogTitle = document.querySelector('meta[property="og:title"]');
     const ogDescription = document.querySelector('meta[property="og:description"]');
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const pageUrl = `https://myteanest.com/${pathname === '/' ? '' : `#${pathname}`}`;
     if (ogTitle) ogTitle.setAttribute('content', title);
     if (ogDescription) ogDescription.setAttribute('content', description);
+    if (ogUrl) ogUrl.setAttribute('content', pageUrl);
+    if (canonical) canonical.setAttribute('href', pageUrl);
   }, [pathname]);
 }

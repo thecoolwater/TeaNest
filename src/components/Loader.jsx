@@ -9,7 +9,7 @@ export default function Loader({ visible }) {
           className="fixed inset-0 z-[100] grid place-items-center bg-night"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.55, ease: 'easeOut' }}
+          transition={{ duration: 0.24, ease: 'easeOut' }}
           aria-label="TeaNest loading"
         >
           <div className="text-center">

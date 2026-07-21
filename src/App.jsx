@@ -1,6 +1,5 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Lenis from 'lenis';
 import Layout from './layouts/Layout.jsx';
 import Loader from './components/Loader.jsx';
 import useSeo from './hooks/useSeo.js';
@@ -23,29 +22,43 @@ function ScrollManager() {
 }
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
   useSeo();
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setLoading(false), 1100);
-    const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+    let active = true;
+    let lenis;
     let frameId;
-    const raf = (time) => {
-      lenis.raf(time);
+
+    const startSmoothScroll = async () => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+      if (reduceMotion || coarsePointer || !active) return;
+
+      const { default: Lenis } = await import('lenis');
+      if (!active) return;
+      lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+      const raf = (time) => {
+        lenis.raf(time);
+        frameId = requestAnimationFrame(raf);
+      };
       frameId = requestAnimationFrame(raf);
     };
-    frameId = requestAnimationFrame(raf);
+
+    const idleId = 'requestIdleCallback' in window
+      ? window.requestIdleCallback(startSmoothScroll, { timeout: 1800 })
+      : window.setTimeout(startSmoothScroll, 900);
 
     return () => {
-      window.clearTimeout(timer);
-      cancelAnimationFrame(frameId);
-      lenis.destroy();
+      active = false;
+      if ('cancelIdleCallback' in window) window.cancelIdleCallback(idleId);
+      else window.clearTimeout(idleId);
+      if (frameId) cancelAnimationFrame(frameId);
+      lenis?.destroy();
     };
   }, []);
 
   return (
     <>
-      <Loader visible={loading} />
       <ScrollManager />
       <Suspense fallback={<Loader visible />}>
         <Routes>

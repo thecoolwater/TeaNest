@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Quote, Star } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection.jsx';
 import Button from '../components/Button.jsx';
 import BrandIntro from '../components/BrandIntro.jsx';
@@ -11,7 +11,7 @@ import ProductCard from '../components/ProductCard.jsx';
 import ProductModal from '../components/ProductModal.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { brandAssets, business } from '../data/brand.js';
-import { faqs, gallery, processSteps, testimonials, whyChoose } from '../data/site.js';
+import { assamQuotes, faqs, gallery, processSteps, testimonials, whyChoose } from '../data/site.js';
 import { products } from '../data/products.js';
 
 export default function Home() {
@@ -27,6 +27,30 @@ export default function Home() {
     <>
       <Hero />
       <BrandIntro />
+
+      <section className="defer-render relative overflow-hidden border-y border-gold/10 bg-[#061711] py-24">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
+        <div className="container-premium relative">
+          <SectionHeader
+            eyebrow="Assam, In Every Word"
+            title="Tea quotes inspired by a bold Assam cup."
+            text="Deep amber colour, brisk strength, and a smooth malty character give premium Assam tea its unmistakable presence."
+          />
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {assamQuotes.map((quote, index) => (
+              <AnimatedSection
+                key={quote}
+                delay={index * 0.07}
+                className={`relative rounded-[20px] border border-gold/15 p-7 shadow-luxury ${index === 1 ? 'bg-gold text-night lg:-translate-y-4' : 'bg-forest/60 text-white'}`}
+              >
+                <Quote className={`h-9 w-9 ${index === 1 ? 'text-night/45' : 'text-gold'}`} aria-hidden="true" />
+                <blockquote className="mt-7 font-heading text-2xl font-semibold leading-9">“{quote}”</blockquote>
+                <p className={`mt-7 text-xs font-semibold uppercase tracking-[.24em] ${index === 1 ? 'text-night/60' : 'text-gold'}`}>TeaNest · Assam Tea Notes</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <AnimatedSection className="container-premium grid gap-10 py-24 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
         <div>

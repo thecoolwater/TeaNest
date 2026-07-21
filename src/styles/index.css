@@ -25,6 +25,35 @@ body {
     #081a14;
 }
 
+.hero-fresh {
+  background:
+    linear-gradient(120deg, rgba(5, 18, 13, 0.96), rgba(8, 35, 27, 0.88)),
+    radial-gradient(circle at 75% 20%, rgba(212, 175, 55, 0.16), transparent 34rem),
+    #071912;
+}
+
+.hero-video-frame {
+  isolation: isolate;
+  box-shadow:
+    0 45px 100px rgba(0, 0, 0, 0.46),
+    0 0 0 8px rgba(212, 175, 55, 0.035);
+}
+
+.hero-video-frame::after {
+  position: absolute;
+  inset: 14px;
+  z-index: 2;
+  pointer-events: none;
+  content: '';
+  border: 1px solid rgba(247, 231, 161, 0.2);
+  border-radius: 20px;
+}
+
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 780px;
+}
+
 .printed-header,
 .printed-footer,
 .intro-video-shell,
@@ -166,4 +195,15 @@ img {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { navLinks } from '../data/site.js';
 import { brandAssets, business } from '../data/brand.js';
@@ -43,18 +43,6 @@ export default function Footer() {
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/62">
             Royal Gold Assam Tea by {business.legalName}. 100% natural taste, rich aroma, and a printed pack identity built around dark green, gold, and cream.
           </p>
-          <div className="mt-6 flex gap-3">
-            {[Instagram, Facebook].map((Icon, index) => (
-              <a
-                key={index}
-                className="focus-ring grid h-10 w-10 place-items-center rounded-full border border-gold/25 text-gold transition hover:bg-gold hover:text-night"
-                href="https://example.com"
-                aria-label="TeaNest social link"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>

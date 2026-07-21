@@ -25,4 +25,4 @@ The production output is generated in `dist/` and contains static files only.
 
 The Vite base is configured as `./` and the app uses hash routing, so it works under repository subpaths without server rewrites.
 
-Before final launch, replace `https://example.com/` in `public/sitemap.xml` and the Open Graph schema with the real GitHub Pages or custom domain URL.
+SEO metadata and the sitemap are prepared for `https://myteanest.com/`. The domain still needs to be connected in GitHub Pages and at the DNS provider before launch.

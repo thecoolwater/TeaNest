@@ -57,6 +57,12 @@ export const testimonials = [
   },
 ];
 
+export const assamQuotes = [
+  'Assam tea should never whisper. It should rise with deep colour, warm malt, and a clean, confident finish.',
+  'Every bold morning begins with leaves shaped by Assam rain, rich soil, and the patience of a careful brew.',
+  'Brew it strong, share it warm, and let the aroma turn an ordinary pause into a TeaNest ritual.',
+];
+
 export const gallery = [
   {
     title: 'Royal Gold Front Pack',

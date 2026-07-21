@@ -1,6 +1,7 @@
 const brandFile = (name) => `${import.meta.env.BASE_URL}brand/${name}`;
 
 export const brandAssets = {
+  heroVideo: `${import.meta.env.BASE_URL}media/tea-pour-pexels-7303605.mp4`,
   introVideo: brandFile('teanest-intro-video.webp'),
   brandedCup: brandFile('teanest-branded-cup.webp'),
   royalGoldFront: brandFile('teanest-royal-gold-front.webp'),
